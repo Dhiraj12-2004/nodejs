@@ -7,12 +7,6 @@ pipeline {
 
     stages {
 
-        stage('Clone Repo') {
-            steps {
-                git branch: 'main', url: 'https://github.com/Dhiraj12-2004/nodejs.git'
-            }
-        }
-
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
