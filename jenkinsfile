@@ -1,0 +1,9 @@
+stage('Deploy') {
+    steps {
+        sh '''
+        export PATH=$PATH:/usr/local/bin:/usr/bin
+        pm2 stop nodejs-app || true
+        pm2 start app.js --name nodejs-app
+        '''
+    }
+}
