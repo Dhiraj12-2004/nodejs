@@ -22,9 +22,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                /usr/bin/pm2 stop nodejs-app || true
-                /usr/bin/pm2 start app.js --name nodejs-app
-                /usr/bin/pm2 save
+                pm2 stop nodejs-app || true
+                pm2 start app.js --name nodejs-app
+                pm2 save
                 '''
             }
         }
